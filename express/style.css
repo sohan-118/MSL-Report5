@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    padding: 70px 25px;
+    color: #e2e8f0;
+    background-color: #030712;
+    background-image:
+        radial-gradient(circle at 15% 15%, rgba(239, 68, 68, 0.08), transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(59, 130, 246, 0.08), transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 1), rgba(3, 7, 18, 1));
+    background-attachment: fixed;
+}
+
+
+h1 {
+    max-width: 1100px;
+    margin: 0 auto 55px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    margin: 18px auto 0;
+    background: linear-gradient(90deg, #ef4444, #f87171);
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.6);
+}
+
+
+
+#div {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+
+
+
+.movie-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.movie-card h3 {
+    position: relative;
+    margin: 0;
+    padding: 26px 26px 12px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+
+.movie-card h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 26px;
+    width: 4px;
+    height: 26px;
+    background: #ef4444;
+    border-radius: 0 4px 4px 0;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+}
+
+.movie-card p {
+    margin: 0;
+    padding: 6px 26px;
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+.movie-card p:last-child {
+    padding-bottom: 26px;
+    color: #fbbf24;
+    font-weight: 500;
+}
+
+.movie-card p strong {
+    color: #f1f5f9;
+    font-weight: 600;
+}
+
+
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(239, 68, 68, 0.3);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 20px rgba(239, 68, 68, 0.1);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+}
+
+.movie-card:hover h3 {
+    color: #fca5a5;
+}
+
+
+@media (max-width: 800px) {
+    #div {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 40px 15px;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .movie-card h3 {
+        font-size: 20px;
+        padding: 22px 20px 10px;
+    }
+
+    .movie-card p {
+        padding: 6px 20px;
+        font-size: 13px;
+    }
+}
